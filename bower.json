@@ -1,0 +1,21 @@
+{
+  "name": "balintimes-oa-fundamentaldata",
+  "version": "0.0.0",
+  "description": "Fundamental Data",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.3",
+    "bootstrap": "~3.3.5"
+  }
+}
