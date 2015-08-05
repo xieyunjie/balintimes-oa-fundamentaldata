@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css"/>
     <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/angular/angular.js"></script>
-    <script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <script type="text/javascript"  data-main="/javascripts/main.js" src="/requirejs/require.js"></script>
 </head>
-<body ng-app="mainApp">
+<body>
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <a href="#" ui-sref=".index" class="navbar-brand">AngularUI Router</a>
@@ -21,7 +19,7 @@
         <li><a>About</a></li>
         <li><a>Details</a></li>
         <li><a href="#" ui-sref=".lines/list">linelist</a></li>
-        <li><a href="#" ui-sref=".lines/edit">lineedit</a></li>
+        <li><a href="#" ui-sref=".lines/edit({uid:'sdfd'})">lineedit</a></li>
     </ul>
 </nav>
 <div class="container">

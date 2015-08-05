@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "angularjs": "~1.4.3",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "angularAMD": "~0.2.1",
+    "angular-ui-router": "~0.2.15"
   }
 }
