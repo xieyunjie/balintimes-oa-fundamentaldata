@@ -4,13 +4,13 @@
   "description": "Fundamental Data",
   "main": "app.js",
   "moduleType": [
-    "amd"
-  ],
+  "amd"
+],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "app/bower_components",
     "test",
     "tests"
   ],
@@ -18,6 +18,8 @@
     "angularjs": "~1.4.3",
     "bootstrap": "~3.3.5",
     "angularAMD": "~0.2.1",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular-messages": "~1.4.3",
+    "font-awesome": "~4.4.0"
   }
 }

@@ -2,7 +2,7 @@
  * Created by AlexXie on 2015/8/4.
  */
 
-var db = require("../models/db");
+var db = require("../db");
 
 
 /*user model*/

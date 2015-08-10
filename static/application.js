@@ -2,9 +2,9 @@
  * Created by AlexXie on 2015/8/4.
  */
 "use strict";
-define(["angularAMD", "router", "ui-router"], function (angularAMD, router) {
+define(["angularAMD", "router", "ui-router", "ui-bootstrap"], function (angularAMD, router) {
 
-    var app = angular.module("mainApp", ['ui.router']);
+    var app = angular.module("mainApp", ['ui.router', 'ui.bootstrap']);
 
 
     app.config(['$httpProvider', function ($httpProvider) {
@@ -31,10 +31,10 @@ define(["angularAMD", "router", "ui-router"], function (angularAMD, router) {
         angular.forEach(router.routers, function (r) {
             var route = angularAMD.route({
                 url: r.url,
-                templateUrl: "/pages/" + r.state + ".html",
+                templateUrl: "/pages" + r.view,
                 resolve: {
                     load: ['$q', '$rootScope', function ($q, $rootScope) {
-                        var loadController = "/pages/" + r.state + ".js";
+                        var loadController = "/pages/" + r.controller;
                         var deferred = $q.defer();
                         require([loadController], function () {
                             $rootScope.$apply(function () {
@@ -45,13 +45,22 @@ define(["angularAMD", "router", "ui-router"], function (angularAMD, router) {
                     }]
                 },
                 controllerProvider: function ($stateParams) {
-                    return r.controller;
+                    return r.controllername;
                 }
             });
             $stateProvider.state(r.state, route);
         });
 
         $urlRouterProvider.otherwise('/index');
+    });
+
+    app.config(function (datepickerPopupConfig) {
+        datepickerPopupConfig.datepickerPopup = "yyyy/MM/dd";
+        datepickerPopupConfig.showButtonBar = true;
+        datepickerPopupConfig.currentText = "今天";
+        datepickerPopupConfig.clearText = "清除";
+        datepickerPopupConfig.closeText = "完成";
+        datepickerPopupConfig.currentText = "今天";
     });
 
     app.run(function ($rootScope, $state) {

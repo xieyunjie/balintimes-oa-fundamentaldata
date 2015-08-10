@@ -12,13 +12,19 @@ define([], function () {
     routers.push({
         state: "line/list",
         url: '/line/list',
-        controller: "LineListController"
+        controllername:"LineController",
+
+        view:'/line/line.client.view.list.html',
+        controller: "/line/line.client.controller.js"
     });
     // 线路编辑
     routers.push({
         state: "line/edit",
         url: '/line/edit/:uid',
-        controller: "LineEditController"
+        controllername:"LineController",
+
+        view:'/line/line.client.view.edit.html',
+        controller: "/line/line.client.controller.js"
     });
 
 
