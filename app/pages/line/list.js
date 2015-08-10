@@ -9,15 +9,15 @@ define(["application"], function (app) {
         };
 
         $scope.delete = function (uid) {
-            $http.post("/lines/delete", {uid: uid}).then(function (res) {
-               init();
-               // console.info(res);
+            $http.post("/line/delete", {uid: uid}).then(function (res) {
+                init();
+                // console.info(res);
             });
         };
 
         var init = function () {
 
-            $http.get("/lines/listall").then(function (res) {
+            $http.get("/line/listall").then(function (res) {
 
                 vm.lines = res.data;
             });

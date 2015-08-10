@@ -54,13 +54,20 @@ define(["angularAMD", "router", "ui-router"], function (angularAMD, router) {
         $urlRouterProvider.otherwise('/index');
     });
 
-    var indexController = function ($rootScope, $scope) {
+    app.run(function ($rootScope, $state) {
+        var init = function () {
+        };
+
+        init();
+    });
+
+    var indexController = function ($scope, $state) {
         var vm = $scope.vm = {
             title: "这是个大标题"
         };
 
     };
-    indexController.$inject = ['$rootScope', '$scope'];
+    indexController.$inject = ['$scope', '$state'];
 
     angularAMD.bootstrap(app);
 

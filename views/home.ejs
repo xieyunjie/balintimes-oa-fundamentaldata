@@ -3,11 +3,11 @@
 <head>
     <title><%= title %></title>
     <!--<link rel='stylesheet' href='/stylesheets/style.css'/>-->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css"/>
-    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript"  data-main="/javascripts/main.js" src="/requirejs/require.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" data-main="main.js" src="/bower_components/requirejs/require.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse" role="navigation">
@@ -18,8 +18,8 @@
         <li><a>Home</a></li>
         <li><a>About</a></li>
         <li><a>Details</a></li>
-        <li><a href="#" ui-sref=".lines/list">linelist</a></li>
-        <li><a href="#" ui-sref=".lines/edit({uid:'sdfd'})">lineedit</a></li>
+        <li><a href="#" ui-sref=".line/list">linelist</a></li>
+        <li><a href="#" ui-sref=".line/edit({uid:'sdfd'})">lineedit</a></li>
     </ul>
 </nav>
 <div class="container">

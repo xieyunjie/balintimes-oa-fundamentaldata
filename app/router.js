@@ -10,14 +10,14 @@ define([], function () {
 
     // 线路列表
     routers.push({
-        state: "lines/list",
-        url: '/lines/list',
+        state: "line/list",
+        url: '/line/list',
         controller: "LineListController"
     });
     // 线路编辑
     routers.push({
-        state: "lines/edit",
-        url: '/lines/edit/:uid',
+        state: "line/edit",
+        url: '/line/edit/:uid',
         controller: "LineEditController"
     });
 

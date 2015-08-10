@@ -11,7 +11,7 @@ define(["application"], function (app) {
         };
 
         $scope.Save = function () {
-            $http.post('/lines/save', vm.line).then(function (res) {
+            $http.post('/line/save', vm.line).then(function (res) {
                 if (res.data == "success") $state.go("lines/list");
             });
         };
@@ -19,7 +19,7 @@ define(["application"], function (app) {
         $scope.init = function () {
 
             if ($state.params.uid != 0) {
-                $http.get('/lines/get/' + $state.params.uid).then(function (res) {
+                $http.get('/line/get/' + $state.params.uid).then(function (res) {
                     vm.line = res.data;
                 });
             }

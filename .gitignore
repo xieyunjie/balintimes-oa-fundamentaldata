@@ -75,5 +75,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # customer
-/bower_components/
+/app/bower_components/
 /node_modules/
