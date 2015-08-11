@@ -12,6 +12,7 @@ module.exports = LineServerController;
 // '/'
 
 LineServerController.list = function (req, res, next) {
+    console.info(req.user);
 
     Line.find(function (err, docs) {
         if (err) next(err);

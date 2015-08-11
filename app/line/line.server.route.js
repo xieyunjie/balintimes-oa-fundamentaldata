@@ -8,8 +8,10 @@ var express = require('express'),
 
 module.exports = router;
 
+router.all('*', AuthCtrl.IsAuth);
+
 // '/'
-router.get('/', AuthCtrl.IsAuth, LineCtrl.list);
+router.get('/', LineCtrl.list);
 
 router.post('/', LineCtrl.create);
 

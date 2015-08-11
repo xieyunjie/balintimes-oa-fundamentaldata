@@ -7,8 +7,11 @@ var AuthServerController = {};
 module.exports = AuthServerController;
 
 AuthServerController.IsAuth = function (req, res, next) {
-    console.info("Auth auth Auth");
-    next();
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.redirect('/login');
 };
 
 AuthServerController.MidShow = function (req, res, next) {
