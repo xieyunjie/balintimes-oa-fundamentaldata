@@ -13,7 +13,7 @@ var express = require('express'),
     flash = require('connect-flash'),
     uuid = require('node-uuid');
 
-module.exports = function() {
+module.exports = function () {
     var app = express();
 
 // view engine setup
@@ -47,6 +47,8 @@ module.exports = function() {
     /* ==== middlewares end ==== */
 
     /* ==== routers begin ==== */
+
+
     var homeroute = require('../app/home/home.server.route'),
         users = require('../app/user/users'),
         login = require('../app/login/login.server.route'),
@@ -60,8 +62,17 @@ module.exports = function() {
     /* ==== routers end ==== */
 
 
-    app.use(express.static(path.join(__dirname, '../static')));
 
+
+    app.all('*', function (req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With");
+        res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+        res.header("X-Powered-By", ' 3.2.1');
+        if (req.method == "OPTIONS") res.send(200);
+        else next();
+    });
+    app.use(express.static(path.join(__dirname, '../static')));
 
 // catch 404 and forward to error handler
     app.use(function (req, res, next) {

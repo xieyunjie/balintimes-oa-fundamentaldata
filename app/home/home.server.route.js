@@ -9,5 +9,9 @@ router.get('/', authCtrl.IsAuth, function (req, res, next) {
 
     res.render('home', {title: 'Express'});
 });
+router.get('/ocload', function (req, res, next) {
+
+    res.render('ocload', {title: 'Express'});
+});
 
 module.exports = router;

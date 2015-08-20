@@ -4,8 +4,8 @@
   "description": "Fundamental Data",
   "main": "app.js",
   "moduleType": [
-  "amd"
-],
+    "amd"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -20,6 +20,7 @@
     "angularAMD": "~0.2.1",
     "angular-ui-router": "~0.2.15",
     "angular-messages": "~1.4.3",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "oclazyload": "~1.0.4"
   }
 }
