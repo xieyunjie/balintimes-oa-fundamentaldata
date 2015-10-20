@@ -1,0 +1,99 @@
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css"/>
+
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+</head>
+<div ng-controller="appController">
+    <!--<form action="/level/att?uploadpath=wq" enctype="multipart/form-data" method="post">-->
+    <!--<input type="text" name="title"><br>-->
+    <!--<input type="text" name="name"><br>-->
+    <!--<input type="file" name="upload"><br>-->
+    <!--<input type="file" name="uploadb"><br>-->
+    <!--<input type="submit" value="Upload">-->
+    <!--</form>-->
+    <h1>{{vm.title}}</h1>
+
+    <form>
+        <input type="text" name="title" ng-model="vm.book.title"><br>
+        <input type="text" name="name" ng-model="vm.book.name"><br>
+        <input type="file" ngf-select="fileSelectd(picFile)" ng-model="picFile" name="upload"  accept="image/*"><br>
+        <input type="file" ngf-select="" ng-model="xlsFile" name="uploadb" accept="image/*"><br>
+
+        <input type="button" value="Upload" ng-click="uploadPic([picFile,xlsFile])">
+        <img ngf-src="picFile" style="width: 100px;height: 100px;float: none;position: relative;top: 7px;">
+
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    var app = angular.module("app", ["ngFileUpload"]);
+    app.controller("appController", ["$scope", "Upload", function ($scope, Upload) {
+        var vm = $scope.vm = {
+            title: 'ttttiiillleeee',
+            book: {
+                title: 'title',
+                name: 'name'
+            }
+        };
+        $scope.fileSelectd = function (file) {
+            console.log(file);
+        };
+        $scope.uploadPic = function (files) {
+            if (files != null) {
+//                file.upload = Upload.http({
+//                    url: '/level/att?uploadpath=wq',
+//                    method: 'POST',
+//                    headers: {
+//                        "Content-Type": "multipart/form-data"
+//                    },
+//                    data: file
+//                });
+                var uploadFn = Upload.upload({
+                    url: '/level/att?uploadpath=wq',
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    },
+                    data: {title: vm.book.title, name: vm.book.name, file1: files[0], file2: files[1]}
+                });
+
+//                file.upload = Upload.upload({
+//                    url: '/level/att?uploadpath=wq',
+//                    headers: {
+//                        "Content-Type":"multipart/form-data"
+//                    },
+//                    data: {title: vm.book.title, name: vm.book.name, file: file}
+//                });
+//
+//                file.upload.then(function (response) {
+//                    $timeout(function () {
+//                        file.result = response.data;
+//                    });
+//                }, function (response) {
+//                    if (response.status > 0)
+//                        $scope.errorMsg = response.status + ': ' + response.data;
+//                }, function (evt) {
+//                    // Math.min is to fix IE which reports 200% sometimes
+//                    file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+//                });
+//
+//                file.upload.xhr(function (xhr) {
+//                    // xhr.upload.addEventListener('abort', function(){console.log('abort complete')}, false);
+//                });
+
+
+            }
+        };
+
+    }]);
+
+
+</script>
+</html>

@@ -52,10 +52,12 @@ module.exports = function () {
     var homeroute = require('../app/home/home.server.route'),
         users = require('../app/user/users'),
         login = require('../app/login/login.server.route'),
-        line = require('../app/line/line.server.route');
+        line = require('../app/line/line.server.route'),
+        level = require("../app/level/level.server.route");
 
     app.use('/', homeroute);
     app.use('/users', users);
+    app.use('/level', level);
     app.use('/login', login);
     app.use('/line', line);
 

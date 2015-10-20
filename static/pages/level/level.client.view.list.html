@@ -2,5 +2,10 @@
     <h1>Level Title</h1>
     {{vm.msg}}
     <br>
-    <button class="btn btn-primary" ng-click="GetMsg()">提交</button>
+    Single
+    <input type="file" nv-file-select="" uploader="uploader"/>
+    <button class="btn btn-primary" ng-click="uploader.uploadAll()">上传</button>
+    <!--<button class="btn btn-primary" ng-click="GetMsg()">提交</button>-->
+    <!--<div ng-include=" '/pages/level/level.client.view.tpl.html' ">-->
+    <!--</div>-->
 </div>

@@ -2,9 +2,9 @@
  * Created by AlexXie on 2015/8/4.
  */
 "use strict";
-define(["angularAMD", "router", "ui-router", "ui-bootstrap"], function (angularAMD, router) {
+define(["angularAMD", "router", "ui-router", "ui-bootstrap","angular-file-upload"], function (angularAMD, router) {
 
-    var app = angular.module("mainApp", ['ui.router', 'ui.bootstrap']);
+    var app = angular.module("mainApp", ['ui.router', 'ui.bootstrap','angularFileUpload']);
 
 
     app.config(['$httpProvider', function ($httpProvider) {

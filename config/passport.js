@@ -14,7 +14,7 @@ module.exports = function () {
         if (username == password) {
 
             var user = {
-                uid: '00000-00000-00000-000000-0000',
+                uid: '0990-00000-00000-000000-0000',
                 username: username,
                 dept: 'manage'
             };
@@ -26,6 +26,8 @@ module.exports = function () {
     }));
 
     passport.serializeUser(function (user, done) {
+        console.log("serializeUser");
+        console.log(user);
         done(null, user.uid);
     });
 
@@ -40,6 +42,8 @@ module.exports = function () {
             username: "username",
             dept: 'manage'
         };
+        console.log("deserializeUser");
+        console.log(uid);
         done(null, user)
     });
 

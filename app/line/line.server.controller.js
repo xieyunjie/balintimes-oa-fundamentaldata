@@ -5,7 +5,6 @@
 
 var uuid = require('node-uuid'),
     Line = require("./line.server.model");
-
 var LineServerController = {};
 module.exports = LineServerController;
 

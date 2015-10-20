@@ -13,8 +13,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="line in vm.lines">
-            <td>{{$index + 1}}</td>
+        <tr ng-repeat="line in vm.lines  track by $index">
+            <td>1</td>
             <td>{{line.uid}}</td>
             <td><a href="#" ui-sref="line/edit({uid:line.uid})">{{line.name}}</a></td>
             <td>{{line.cityname}}</td>

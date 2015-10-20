@@ -8,7 +8,7 @@ var express = require('express'),
 
 module.exports = router;
 
-router.all('*', AuthCtrl.IsAuth);
+//router.all('*', AuthCtrl.IsAuth);
 
 // '/'
 router.get('/', LineCtrl.list);

@@ -27,6 +27,16 @@ define([], function () {
         controller: "/line/line.client.controller.js"
     });
 
+    // 等级列表
+    routers.push({
+        state: "level/list",
+        url: '/level/list',
+        controllername:"LevelController",
+
+        view:'/level/level.client.view.list.html',
+        controller: "/level/level.client.controller.js"
+    });
+
 
     var util = {
         makeControllerProvider: function (url) {
